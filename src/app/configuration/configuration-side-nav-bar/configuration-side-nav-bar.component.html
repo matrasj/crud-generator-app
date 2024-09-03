@@ -1,0 +1,14 @@
+<nav class="sidebar">
+  <a class="nav-item" [routerLink]="RouteManager.getConfigurationEntitiesTable()">
+    <mat-icon class="me-2">label_important</mat-icon>
+    <span>{{ 'global.entity_list' | translate }}</span>
+  </a>
+  <a class="nav-item" [routerLink]="['/route2']">
+    <mat-icon class="me-2">label</mat-icon>
+    <span>Label2</span>
+  </a>
+  <a class="nav-item" [routerLink]="['/route3']">
+    <mat-icon class="me-2">label_outline</mat-icon>
+    <span>Label3</span>
+  </a>
+</nav>

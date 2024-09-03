@@ -1,0 +1,10 @@
+export enum ColumnDataType {
+  TEXT = 'TEXT',
+  TEXT_AREA = 'TEXT_AREA',
+  NUMERIC = 'NUMERIC',
+  DATE = 'DATE',
+  TIME = 'TIME',
+  FILE = 'FILE',
+  ENTITY = 'ENTITY',
+  MULTIPLE_ENTITIES = 'MULTIPLE_ENTITIES'
+}

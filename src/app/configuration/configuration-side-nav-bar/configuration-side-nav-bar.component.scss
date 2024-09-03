@@ -1,0 +1,30 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #282c34;
+  color: #61dafb;
+  padding: 20px;
+  width: 150px;
+  height: 90vh;
+  border-right: 1px solid #61dafb;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: #61dafb;
+  text-decoration: none;
+  margin: 10px 0;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .mat-icon {
+    margin-right: 8px;
+  }
+}

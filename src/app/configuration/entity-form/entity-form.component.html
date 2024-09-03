@@ -1,0 +1,59 @@
+<button class="mj-button-primary mb-2">
+  <span>{{ 'global.back' | translate }}</span>
+</button>
+<ng-container *ngIf="!isLoading; else loader">
+  <div class="w-100">
+    <div class="row mb-3">
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'global.entity_name' | translate }}</mat-label>
+        <input [formControl]="entityNameControl" matInput placeholder="Np. Próbka"/>
+      </mat-form-field>
+    </div>
+
+    <div class="row w-100">
+      <div *ngFor="let col of cols" class="row d-flex align-items-center" style="gap: 1.5rem">
+        <div class="col-4">
+          <mat-form-field class="full-width">
+            <mat-label>{{ 'global.column_name' | translate}}</mat-label>
+            <input [formControl]="col.nameControl" matInput placeholder="Np. Nazwa"/>
+          </mat-form-field>
+        </div>
+
+        <div class="col-3">
+          <mat-form-field class="full-width">
+            <mat-label>{{ 'global.column_data_type.title' | translate }}</mat-label>
+            <mat-select [formControl]="col.columnDataTypeControl">
+              <mat-option *ngFor="let colDataType of columnDataTypes"
+                          [value]="colDataType">{{ ('global.column_data_type.' + colDataType) | translate }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-1">
+          <mat-checkbox [formControl]="col.required">{{ 'global.required' | translate }}</mat-checkbox>
+        </div>
+
+        <div class="col-3" *ngIf="col.columnDataTypeControl.value === ColumnDataType.ENTITY ||
+        col.columnDataTypeControl.value === ColumnDataType.MULTIPLE_ENTITIES">
+          <mat-form-field class="full-width">
+            <mat-label>{{ 'global.entity' | translate }}</mat-label>
+            <mat-select [formControl]="col.foreignKeyControl" [required]="col.columnDataTypeControl.value === ColumnDataType.ENTITY ||
+        col.columnDataTypeControl.value === ColumnDataType.MULTIPLE_ENTITIES">
+              <mat-option *ngFor="let entity of entities"
+                          [value]="entity.id">{{ entity.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <button class="mj-button-primary" (click)="addColumn()">{{ 'global.add_column' | translate }}</button>
+    </div>
+
+    <button class="mj-button-primary" (click)="save()">{{ 'global.save' | translate }}</button>
+  </div>
+</ng-container>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

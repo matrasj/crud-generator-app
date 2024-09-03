@@ -1,0 +1,26 @@
+{
+  "global": {
+    "entity": "Encja",
+    "save": "Zapisz",
+    "entity_list": "Lista encji",
+    "add_column": "Dodaj kolumnę",
+    "required": "Wymagane",
+    "column_name": "Nazwa kolumny",
+    "entity_name": "Nazwa encji",
+    "back": "Wróć",
+    "error_during_fetching_entities": "Wystąpił bład podczas pobierania kluczów obcych",
+    "column_data_type": {
+      "title": "Typ danych",
+      "TEXT": "Tekst",
+      "TEXT_AREA": "Pole tekstowe",
+      "NUMERIC": "Liczba",
+      "DATE": "Data",
+      "TIME": "Czas",
+      "FILE": "Plik",
+      "ENTITY": "Inna encja",
+      "MULTIPLE_ENTITIES": "Inne encje"
+    },
+    "successfully_created_entity": "Pomyslnie utworzono encję",
+    "error_during_saving_entity": "Wystapił błąd podczas tworzenia encji"
+  }
+}
